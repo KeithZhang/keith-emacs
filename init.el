@@ -48,3 +48,20 @@
 ;; 增加钩子，当进入emacs-list的major mode时候，启用show-paren-mode，
 ;; 这个mode可以动态显示括号配对情况
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+;; 默认使用spacemacs主题配色
+(load-theme 'spacemacs-dark t)
+
+;; 无用的空格可以一键删除，而不需要多次删除
+(require 'hungry-delete)
+(global-hungry-delete-mode t)
+
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
