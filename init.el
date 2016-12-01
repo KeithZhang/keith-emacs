@@ -102,6 +102,7 @@
 					    ("8mc" "Microsoft")
 					    ))
 
-
+;; 禁止声音提示
+(setq ring-bell-function 'ignore)
 
 
