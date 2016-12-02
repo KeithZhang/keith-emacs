@@ -3,6 +3,8 @@
 
 ;; 显示行号
 (global-linum-mode t)
+;; 在js2-mode下才显示行号
+;; (add-hook 'js2-mode-hook 'linum-mode)
 
 ;; 外部修改文件后，emacs重新加载
 (global-auto-revert-mode t)
@@ -39,5 +41,22 @@
 ;; 作用是本地装了node，在emacs中能调用到
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+;; 
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun indent-region-or-buffer ()
+  (interactive)
+  (save-excursion
+    ;; 如果选中文本
+    (if (region-active-p)
+	(progn
+	  (indent-region (region-beginning) (region-end))
+	  (message "indented selected region."))
+      (progn
+	(indent-buffer)
+	(message "Indented buffer.")))))
 
 (provide 'init-better-defaults)

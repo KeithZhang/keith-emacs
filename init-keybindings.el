@@ -17,4 +17,10 @@
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
+;; 迅速打开counsel-git查看git版控中的所有文件
+(global-set-key (kbd "C-c p f") 'counsel-git)
+
+;; 文本format
+(global-set-key (kbd "C-M-m") 'indent-region-or-buffer)
+
 (provide 'init-keybindings)
