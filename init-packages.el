@@ -37,7 +37,6 @@
 (global-hungry-delete-mode t)
 
 ;; 自动补全括号功能
-(require 'smartparens-config)
 (smartparens-global-mode t)
 
 ;; swiper功能，搜索，查找文件等会在下方打开小窗口方便选择
